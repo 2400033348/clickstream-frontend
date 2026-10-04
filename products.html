@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="theme-color"
+    content="#f7f8f4"
+  >
+
+  <meta
+    name="description"
+    content="ClickStream real-time e-commerce product activity demo."
+  >
+
+  <title>ClickStream | Products</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="script.js" defer></script>
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header class="site-header">
+
+    <a
+      class="wordmark"
+      href="index.html"
+      aria-label="ClickStream home"
+    >
+      <span
+        class="brand-mark"
+        aria-hidden="true"
+      >C</span>
+
+      <span>
+        Click<span class="wordmark-light">Stream</span>
+      </span>
+    </a>
+
+
+    <nav
+      class="primary-nav"
+      aria-label="Main navigation"
+    >
+
+      <a
+        href="index.html"
+        class="nav-link"
+      >
+        Home
+      </a>
+
+      <a
+        href="products.html"
+        class="nav-link is-active"
+      >
+        Products
+      </a>
+
+      <a
+        href="#about"
+        class="nav-link"
+        data-nav="About"
+      >
+        About
+      </a>
+
+    </nav>
+
+
+    <button
+      class="cart-button"
+      type="button"
+      aria-label="Shopping cart"
+    >
+
+      <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path d="M3 4h2l2.2 10.1a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 1.9-1.4L22 8H6M10 20h.01M18 20h.01" />
+      </svg>
+
+      <span>Bag</span>
+
+      <span
+        class="cart-count"
+        aria-live="polite"
+      >
+        0
+      </span>
+
+    </button>
+
+  </header>
+
+
+  <main>
+
+    <!-- PRODUCTS -->
+
+    <section
+      class="shop-layout"
+      id="products"
+      aria-labelledby="products-heading"
+    >
+
+      <div class="shop-main">
+
+        <div class="section-heading">
+
+          <div>
+
+            <p class="eyebrow section-eyebrow">
+              THE EVERYDAY EDIT
+            </p>
+
+            <h1 id="products-heading">
+              Good things, picked for you.
+            </h1>
+
+          </div>
+
+          <span class="product-total" id="result-count">
+            40 essentials
+          </span>
+
+        </div>
+
+
+        <div class="account-session">
+          <span id="logged-in-user">Logged in as: USER_101</span>
+          <button id="logout-button" type="button">Logout</button>
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <form
+          class="search-form"
+          role="search"
+        >
+
+          <label class="search-box">
+
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <circle
+                cx="10.8"
+                cy="10.8"
+                r="6.8"
+              />
+
+              <path
+                d="m16 16 4.5 4.5"
+              />
+
+            </svg>
+
+            <input
+              id="product-search"
+              type="search"
+              placeholder="Search the collection"
+              autocomplete="off"
+              aria-label="Search products"
+            >
+
+            <kbd>/</kbd>
+
+          </label>
+
+          <button
+            class="search-submit"
+            type="submit"
+          >
+            Search
+          </button>
+
+        </form>
+
+
+        <!-- RECOMMENDATIONS ARE INSERTED HERE BY script.js -->
+
+
+        <div class="all-products-heading">
+          <h2>All Products</h2>
+        </div>
+
+
+        <!-- PRODUCT GRID -->
+
+        <div
+          class="product-grid"
+          id="product-grid"
+          aria-live="polite"
+        ></div>
+
+
+        <p
+          class="empty-state"
+          id="empty-state"
+          hidden
+        >
+          No products found
+        </p>
+
+      </div>
+
+
+      <!-- ACTIVITY PANEL -->
+
+      <aside
+        class="activity-panel"
+        aria-labelledby="activity-heading"
+      >
+
+        <div class="activity-topline">
+
+          <div class="stream-status">
+
+            <span class="status-pulse"></span>
+
+            Streaming demo active
+
+          </div>
+
+
+          <button
+            class="clear-button"
+            id="clear-events"
+            type="button"
+            aria-label="Clear recent events"
+            title="Clear recent events"
+          >
+
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                d="M4 7h16M10 11v6m4-6v6M6 7l1 14h10l1-14M9 7V4h6v3"
+              />
+            </svg>
+
+          </button>
+
+        </div>
+
+
+        <h2 id="activity-heading">
+          Clickstream <span>activity</span>
+        </h2>
+
+
+        <p class="activity-subtitle">
+          A live look at what shoppers do.
+        </p>
+
+
+        <div class="event-metric">
+
+          <span class="metric-label">
+            EVENTS GENERATED
+          </span>
+
+          <strong
+            id="event-count"
+            aria-live="polite"
+          >
+            0
+          </strong>
+
+          <span class="metric-period">
+            this session
+          </span>
+
+        </div>
+
+
+        <div class="event-feed-heading">
+
+          <span>
+            Recent events
+          </span>
+
+          <span class="live-label">
+            LIVE
+          </span>
+
+        </div>
+
+
+        <ol
+          class="event-feed"
+          id="event-feed"
+          aria-live="polite"
+          aria-relevant="additions"
+        ></ol>
+
+
+        <p
+          class="feed-empty"
+          id="feed-empty"
+        >
+          Your interactions will show up here.
+        </p>
+
+
+        <div class="pipeline-note">
+
+          <span
+            class="pipeline-icon"
+            aria-hidden="true"
+          >
+            ↗
+          </span>
+
+          <span>
+            Next stop:
+            <strong>Amazon Kinesis</strong>
+          </span>
+
+        </div>
+
+      </aside>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section
+      class="about-band"
+      id="about"
+      aria-labelledby="about-heading"
+    >
+
+      <div
+        class="about-symbol"
+        aria-hidden="true"
+      >
+        ↗
+      </div>
+
+      <div>
+
+        <p class="eyebrow">
+          BUILT FOR THE STREAM
+        </p>
+
+        <h2 id="about-heading">
+          A storefront with a signal.
+        </h2>
+
+      </div>
+
+      <p>
+        Every search, product view, and add-to-bag action
+        becomes a structured event. These events are sent
+        through the AWS streaming pipeline for processing,
+        storage, analytics, and recommendations.
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer class="site-footer">
+
+    <a
+      class="wordmark footer-wordmark"
+      href="index.html"
+    >
+
+      <span
+        class="brand-mark"
+        aria-hidden="true"
+      >
+        C
+      </span>
+
+      <span>
+        Click<span class="wordmark-light">Stream</span>
+      </span>
+
+    </a>
+
+    <span>
+      CLICKSTREAM PIPELINE DEMO
+      <span class="footer-separator">/</span>
+      2026
+    </span>
+
+  </footer>
+
+
+  <!-- PRODUCT DETAILS DIALOG -->
+
+  <dialog
+    class="product-dialog"
+    id="product-dialog"
+    aria-labelledby="dialog-title"
+  >
+
+    <button
+      class="dialog-close"
+      type="button"
+      aria-label="Close product details"
+    >
+      ×
+    </button>
+
+    <img
+      class="dialog-image"
+      id="dialog-image"
+      alt=""
+    >
+
+    <div class="dialog-copy">
+
+      <p class="eyebrow">
+        PRODUCT DETAILS
+      </p>
+
+      <h2 id="dialog-title"></h2>
+
+      <p id="dialog-description"></p>
+
+      <strong id="dialog-price"></strong>
+
+      <button
+        class="dialog-add"
+        type="button"
+      >
+        Add to bag
+        <span aria-hidden="true">↗</span>
+      </button>
+
+    </div>
+
+  </dialog>
+
+</body>
+
+</html>

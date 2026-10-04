@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="theme-color" content="#f7f8f4">
+
+  <title>ClickStream | Real-Time Shopping</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="landing-page">
+
+  <!-- HEADER -->
+
+  <header class="landing-header">
+
+    <a class="landing-logo" href="index.html">
+      <span class="brand-mark">C</span>
+      <span>Click<span>Stream</span></span>
+    </a>
+
+    <nav class="landing-nav">
+      <a href="#home">Home</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="products.html">Products</a>
+    </nav>
+
+    <button
+      class="landing-login"
+      id="open-login"
+      type="button"
+    >
+      Login
+      <span>↗</span>
+    </button>
+
+  </header>
+
+
+  <!-- HERO -->
+
+  <main>
+
+    <section class="landing-hero" id="home">
+
+      <div class="landing-copy">
+
+        <div class="landing-eyebrow">
+          <span></span>
+          REAL-TIME E-COMMERCE STREAMING
+        </div>
+
+        <h1>
+          Every interaction
+          <br>
+          <em>becomes a signal.</em>
+        </h1>
+
+        <p>
+          Shop naturally while ClickStream captures every search,
+          product view, click and add-to-bag action in real time.
+        </p>
+
+        <div class="landing-actions">
+
+          <button
+            class="primary-cta"
+            id="open-store"
+            type="button"
+          >
+            Enter the store
+            <span>↗</span>
+          </button>
+
+          <a
+            class="secondary-cta"
+            href="#how-it-works"
+          >
+            How it works
+          </a>
+
+        </div>
+
+        <div class="landing-note">
+          <span class="live-dot"></span>
+          Powered by an AWS streaming pipeline
+        </div>
+
+      </div>
+
+
+      <!-- VISUAL -->
+
+      <div class="landing-visual">
+
+        <div class="visual-label">
+          LIVE SHOPPING SIGNAL
+        </div>
+
+        <div class="visual-card visual-main">
+
+          <img
+            src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=1000&q=85"
+            alt="Laptop on a desk"
+          >
+
+          <div class="visual-overlay">
+
+            <span>PRODUCT VIEW</span>
+
+            <strong>
+              Everyday Laptop
+            </strong>
+
+            <small>
+              Event captured • now
+            </small>
+
+          </div>
+
+        </div>
+
+
+        <div class="floating-card floating-one">
+
+          <span class="floating-icon">↗</span>
+
+          <div>
+            <small>STREAMING</small>
+            <strong>Kinesis</strong>
+          </div>
+
+        </div>
+
+
+        <div class="floating-card floating-two">
+
+          <span class="floating-number">03</span>
+
+          <div>
+            <small>RECOMMENDATIONS</small>
+            <strong>Personalized</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+
+    <section
+      class="signal-section"
+      id="how-it-works"
+    >
+
+      <div class="signal-heading">
+
+        <p class="landing-eyebrow">
+          BUILT FOR THE STREAM
+        </p>
+
+        <h2>
+          From click to
+          <span>insight.</span>
+        </h2>
+
+      </div>
+
+
+      <div class="signal-grid">
+
+        <div class="signal-card">
+
+          <span class="signal-number">
+            01
+          </span>
+
+          <h3>
+            Interact
+          </h3>
+
+          <p>
+            Browse products, search, view items and add
+            products to your bag.
+          </p>
+
+        </div>
+
+
+        <div class="signal-card">
+
+          <span class="signal-number">
+            02
+          </span>
+
+          <h3>
+            Stream
+          </h3>
+
+          <p>
+            User activity is converted into structured
+            events and streamed through Amazon Kinesis.
+          </p>
+
+        </div>
+
+
+        <div class="signal-card">
+
+          <span class="signal-number">
+            03
+          </span>
+
+          <h3>
+            Discover
+          </h3>
+
+          <p>
+            Clickstream history is used to provide
+            relevant product recommendations.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- LOGIN MODAL -->
+
+  <div
+    class="login-overlay"
+    id="login-overlay"
+    hidden
+  >
+
+    <div
+      class="login-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="login-title"
+    >
+
+      <button
+        class="login-close"
+        id="close-login"
+        type="button"
+        aria-label="Close login"
+      >
+        ×
+      </button>
+
+      <div class="modal-brand">
+        <span class="brand-mark">C</span>
+        <span>Click<span>Stream</span></span>
+      </div>
+
+      <p class="modal-eyebrow">
+        ENTER THE STORE
+      </p>
+
+      <h2 id="login-title">
+        Welcome back.
+      </h2>
+
+      <p class="modal-description">
+        Sign in to continue shopping and experience
+        real-time clickstream recommendations.
+      </p>
+
+
+      <form id="login-form">
+
+        <label for="login-user">
+          User ID
+        </label>
+
+        <select id="login-user" required>
+          <option value="USER_101">USER_101</option>
+          <option value="USER_102">USER_102</option>
+          <option value="USER_103">USER_103</option>
+        </select>
+
+
+        <label for="login-password">
+          Password
+        </label>
+
+        <input
+          id="login-password"
+          type="password"
+          value="clickstream"
+          placeholder="Enter your password"
+          required
+        >
+
+
+        <button
+          class="modal-login-button"
+          type="submit"
+        >
+          Continue to store
+          <span>↗</span>
+        </button>
+
+      </form>
+
+      <p class="demo-note">
+        Demo account pre-filled for presentation.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    const loginOverlay =
+      document.getElementById("login-overlay");
+
+    const openLogin =
+      document.getElementById("open-login");
+
+    const openStore =
+      document.getElementById("open-store");
+
+    const closeLogin =
+      document.getElementById("close-login");
+
+    const loginForm =
+      document.getElementById("login-form");
+
+
+    function showLogin() {
+      loginOverlay.hidden = false;
+      document.body.classList.add("modal-open");
+
+      setTimeout(() => {
+        document.getElementById("login-user").focus();
+      }, 50);
+    }
+
+
+    function hideLogin() {
+      loginOverlay.hidden = true;
+      document.body.classList.remove("modal-open");
+    }
+
+
+    openLogin.addEventListener(
+      "click",
+      showLogin
+    );
+
+
+    openStore.addEventListener(
+      "click",
+      showLogin
+    );
+
+
+    closeLogin.addEventListener(
+      "click",
+      hideLogin
+    );
+
+
+    loginOverlay.addEventListener(
+      "click",
+      function(event) {
+
+        if (event.target === loginOverlay) {
+          hideLogin();
+        }
+
+      }
+    );
+
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (
+          event.key === "Escape" &&
+          !loginOverlay.hidden
+        ) {
+          hideLogin();
+        }
+
+      }
+    );
+
+
+    loginForm.addEventListener(
+      "submit",
+      function(event) {
+
+        event.preventDefault();
+
+        const selectedUserId =
+          document
+            .getElementById("login-user")
+            .value
+            .trim();
+
+        const password =
+          document
+            .getElementById("login-password")
+            .value;
+
+        if (
+          !["USER_101", "USER_102", "USER_103"].includes(selectedUserId) ||
+          password !== "clickstream"
+        ) {
+          return;
+        }
+
+        localStorage.setItem(
+          "clickstream_user_id",
+          selectedUserId
+        );
+
+        window.location.href =
+          "products.html";
+
+      }
+    );
+
+  </script>
+
+</body>
+</html>
